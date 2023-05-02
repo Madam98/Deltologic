@@ -1,5 +1,5 @@
 # using node alpine as base image
-FROM node:bullseye-slim as build
+FROM node:12-alpine as build
 
 # working dir ./app
 WORKDIR /app
@@ -15,12 +15,3 @@ COPY . .
 
 # default command
 CMD npm start
-
-### STAGE 2: Production Environment ###
-FROM node:bullseye-slim
-
-COPY --from=build /app/dist /usr/share/nginx/html
-
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
