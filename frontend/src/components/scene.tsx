@@ -1,12 +1,6 @@
 import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
-
-
-// TYPY
-type Props = {
-  surface: number[];
-  waterBlocks: number[][];
-};
+import { Props } from '../types/instances'
 
 const boxArgs = [2, 1, 1];
 const edgesGeometry = new THREE.EdgesGeometry(new THREE.BoxGeometry(...boxArgs));

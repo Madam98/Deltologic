@@ -1,5 +1,3 @@
-
-
 export class EmptyInputError extends Error {
     constructor(message: string) {
       super(message);
@@ -13,3 +11,8 @@ export class InvalidDataFormatError extends Error {
       this.name = 'InvalidDataFormatError';
     }
 }
+
+export type Props = {
+  surface: number[];
+  waterBlocks: number[][];
+};

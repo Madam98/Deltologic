@@ -3,7 +3,7 @@
 body {
   height: 150vh;
   background-size: cover;
-  background: linear-gradient(to bottom, rgba(39, 39, 39, 0.3) 0%, rgba(0,0,0,1) 100%), url('./assets/cloud.png');
+  /*background: linear-gradient(to bottom, rgba(39, 39, 39, 0.3) 0%, rgba(0,0,0,1) 100%), url('./assets/cloud.png'); */ /* powoduje to duży narzut na procesor */
   -webkit-animation: slidein 10s;
   animation: slidein 100s;
   -webkit-animation-fill-mode: forwards;

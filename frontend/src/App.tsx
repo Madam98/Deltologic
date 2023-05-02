@@ -27,6 +27,7 @@ function App() {
       if (!/^\d+(,\s*\d+)*$/.test(inputValue)) {
         throw new InvalidDataFormatError('Inavlid data format');
       }
+      
       setShowVolume(true);
       setShowScene(true); 
       const surfaceArray = inputValue.split(',').map(Number);
@@ -76,7 +77,7 @@ function App() {
           <div>
             <h4> Enter array to check rain volume </h4>
             <h6> Data format example: 3, 2, 3</h6>
-            <input className="inputText" type="text" ref={inputRef} />
+            <input className="inputText" type="text" ref={inputRef} onKeyDown={(e) => {if (e.keyCode === 13) {handleClick();} }}/>
             <div>
               <button className="button" onClick={handleClick}>Check volume</button>
             </div>

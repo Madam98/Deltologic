@@ -13,8 +13,8 @@ export const getWaterVolume = async (surfaceArray: number[]): Promise<number> =>
   } catch (error) {
     //console.error(error);
     if (error instanceof TypeError && error.message === 'Failed to fetch') {
-      console.error('Failed to fetch data. Trying again in 5 seconds...');
-      await new Promise(resolve => setTimeout(resolve, 5000));
+      console.error('Failed to fetch data. Trying again in 15 seconds...');
+      await new Promise(resolve => setTimeout(resolve, 15000));
       return getWaterVolume(surfaceArray);
     } else {
       throw new Error("Wystąpił błąd podczas wykonywania żądania.");
