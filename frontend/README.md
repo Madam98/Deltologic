@@ -5,7 +5,7 @@
 
 Do napisania frontendu został wykorzystany React oraz TypeScript. Do wizualizacji rysowanej przestrzeni został wykorzystany framework Threejs (w celu uproszczenia projektu zrezygnowano z niepotrzebnych shaderów wpływających na wygląd końcowy). Do stworzenia prostych testów jednostkowych został wykorzystany framework Jest. 
 
-Po wpisaniu przez użytkownika oczekiwanego wyglądu tablicy przestrzeń, w którym ma znajdować się woda, jest obliczana w pliku *findWaterBlocks*. Sposób znajdywania miejsca, w którym moze znajdować się woda opiera się na znajdywaniu pustych punktów w stworzonej tablicy, a następnie szukaniu lewych i prawych najwyższych "słupów" w celu poprawnego stwierdzenia czy woda może się tam znaleźć. Wygląd i renderowanie sceny za pomocą Canvas znajduje się w pliku *scene*. Reszta funkcjonalności jak i komponent główny strony i opis styli znadjue się w *App*.
+Po wpisaniu przez użytkownika oczekiwanego wyglądu tablicy przestrzeń, w którym ma znajdować się woda, jest obliczana w pliku *findWaterBlocks*. Sposób znajdywania miejsca, w którym moze znajdować się woda opiera się na znajdywaniu pustych punktów w stworzonej tablicy, a następnie szukaniu lewych i prawych najwyższych "słupów" w celu poprawnego stwierdzenia czy woda może się tam znaleźć. Wygląd i renderowanie sceny za pomocą Canvas znajduje się w pliku *scene*. Reszta funkcjonalności jak i komponent główny strony i opis styli znajduje się w *App*.
 
 ## Uruchomienie kontenera
 Jeśli chcemy oddzielnie uruchomić kontener backendu możemy to zrobić za pomocą dwóch poleceń:
