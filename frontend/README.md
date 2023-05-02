@@ -1,46 +1,47 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Frontend
 
-## Available Scripts
+## Opis problemu i rozwiązania
 
-In the project directory, you can run:
+Do napisania frontendu został wykorzystany React oraz TypeScript. Do wizualizacji rysowanej przestrzeni został wykorzystany framework Threejs (w celu uproszczenia projektu zrezygnowano z niepotrzebnych shaderów wpływających na wygląd końcowy). Do stworzenia prostych testów jednostkowych został wykorzystany framework Jest. 
 
-### `npm start`
+Po wpisaniu przez użytkownika oczekiwanego wyglądu tablicy przestrzeń, w którym ma znajdować się woda, jest obliczana w pliku *findWaterBlocks*. Sposób znajdywania miejsca, w którym moze znajdować się woda opiera się na znajdywaniu pustych punktów w stworzonej tablicy, a następnie szukaniu lewych i prawych najwyższych "słupów" w celu poprawnego stwierdzenia czy woda może się tam znaleźć. Wygląd i renderowanie sceny za pomocą Canvas znajduje się w pliku *scene*. Reszta funkcjonalności jak komponent główny strony i opis styli znadjue się w *App*.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Uruchomienie kontenera
+Jeśli chcemy oddzielnie uruchomić kontener backendu możemy to zrobić za pomocą dwóch poleceń:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+docker build -t frontend .
+```
 
-### `npm test`
+w celu zbudowania obrazu oraz
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+docker run -p 80:3000 frontend
+```
 
-### `npm run build`
+w celu uruchomienia kontenera nasłuchującego na porcie 80. Wygląd strony możemy podejrzeć wchodząc na stronę **localhost:80**. W przypadku gdy mamy juz uruchomiony kontener backendowy strona powinna zwracać poprawny wynik obliczania objętości.
+Jeśli chcemu uruchomić kontener tylko w celu wykonania testów należy wpisać:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+docker run -p 80:3000 frontend npm test
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Uruchamianie kodu lokalnie
+Jeśli chcemy uruchomić oraz modyfikować nasz dany kod lokalnie należy zainstalować wszystkie potrzebne paczki poleceniem z danego miejsca w repozytorium:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+npm install
+```
 
-### `npm run eject`
+oraz urchomić poleceniem:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+npm start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Możliwe jest również wykonanie testów poleceniem
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+npm test
+```
