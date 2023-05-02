@@ -33,7 +33,7 @@ describe('calculateWaterVolume', () => {
   });
 
   it('should return 18 for [1, 0, 4, 2, 3, 4, 6, 4, 8, 6, 8, 6, 5, 4, 8, 1, 2]', () => {
-    const heights = [1, 0, 4, 2, 3, 4, 6, 4, 8, 6, 8, 6, 5, 4, 8, 1];
+    const heights = [1, 0, 4, 2, 3, 4, 6, 4, 8, 6, 8, 6, 5, 4, 8, 1, 2];
     const volume = calculateWaterVolume(heights);
     expect(volume).toBe(18);
   });
