@@ -190,12 +190,3 @@ h6 {
 .button2:hover {
   background-color: #249eac;
 }
-
-.Modal {
-  z-index: 9999;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.9);
-}
